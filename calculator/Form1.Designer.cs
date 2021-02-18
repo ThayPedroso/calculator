@@ -45,9 +45,11 @@
             this.btn_equals = new System.Windows.Forms.Button();
             this.btn_division = new System.Windows.Forms.Button();
             this.btn_separator = new System.Windows.Forms.Button();
-            this.display = new System.Windows.Forms.Label();
+            this.display_main = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_mod = new System.Windows.Forms.Button();
+            this.display_operation = new System.Windows.Forms.Label();
+            this.display_firstNumber = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_zero
@@ -70,6 +72,7 @@
             this.btn_multiplication.TabIndex = 1;
             this.btn_multiplication.Text = "x";
             this.btn_multiplication.UseVisualStyleBackColor = true;
+            this.btn_multiplication.Click += new System.EventHandler(this.btn_multiplication_Click);
             // 
             // btn_nine
             // 
@@ -146,6 +149,7 @@
             this.btn_subtraction.TabIndex = 8;
             this.btn_subtraction.Text = "-";
             this.btn_subtraction.UseVisualStyleBackColor = true;
+            this.btn_subtraction.Click += new System.EventHandler(this.btn_subtraction_Click);
             // 
             // btn_addition
             // 
@@ -156,6 +160,7 @@
             this.btn_addition.TabIndex = 9;
             this.btn_addition.Text = "+";
             this.btn_addition.UseVisualStyleBackColor = true;
+            this.btn_addition.Click += new System.EventHandler(this.btn_addition_Click);
             // 
             // btn_three
             // 
@@ -207,8 +212,9 @@
             this.btn_division.Name = "btn_division";
             this.btn_division.Size = new System.Drawing.Size(59, 40);
             this.btn_division.TabIndex = 14;
-            this.btn_division.Text = "%";
+            this.btn_division.Text = "/";
             this.btn_division.UseVisualStyleBackColor = true;
+            this.btn_division.Click += new System.EventHandler(this.btn_division_Click);
             // 
             // btn_separator
             // 
@@ -220,16 +226,16 @@
             this.btn_separator.Text = ".";
             this.btn_separator.UseVisualStyleBackColor = true;
             // 
-            // display
+            // display_main
             // 
-            this.display.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.display.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.display.Location = new System.Drawing.Point(12, 22);
-            this.display.Name = "display";
-            this.display.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.display.Size = new System.Drawing.Size(254, 50);
-            this.display.TabIndex = 16;
-            this.display.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.display_main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.display_main.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.display_main.Location = new System.Drawing.Point(12, 33);
+            this.display_main.Name = "display_main";
+            this.display_main.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.display_main.Size = new System.Drawing.Size(254, 50);
+            this.display_main.TabIndex = 16;
+            this.display_main.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_clear
             // 
@@ -251,6 +257,24 @@
             this.btn_mod.TabIndex = 18;
             this.btn_mod.Text = "mod";
             this.btn_mod.UseVisualStyleBackColor = true;
+            this.btn_mod.Click += new System.EventHandler(this.btn_mod_Click);
+            // 
+            // display_operation
+            // 
+            this.display_operation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.display_operation.Location = new System.Drawing.Point(246, 9);
+            this.display_operation.Name = "display_operation";
+            this.display_operation.Size = new System.Drawing.Size(20, 23);
+            this.display_operation.TabIndex = 19;
+            this.display_operation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // display_firstNumber
+            // 
+            this.display_firstNumber.Location = new System.Drawing.Point(12, 9);
+            this.display_firstNumber.Name = "display_firstNumber";
+            this.display_firstNumber.Size = new System.Drawing.Size(228, 23);
+            this.display_firstNumber.TabIndex = 20;
+            this.display_firstNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form1
             // 
@@ -258,9 +282,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(277, 359);
+            this.Controls.Add(this.display_firstNumber);
+            this.Controls.Add(this.display_operation);
             this.Controls.Add(this.btn_mod);
             this.Controls.Add(this.btn_clear);
-            this.Controls.Add(this.display);
+            this.Controls.Add(this.display_main);
             this.Controls.Add(this.btn_separator);
             this.Controls.Add(this.btn_division);
             this.Controls.Add(this.btn_equals);
@@ -304,9 +330,11 @@
         private System.Windows.Forms.Button btn_equals;
         private System.Windows.Forms.Button btn_division;
         private System.Windows.Forms.Button btn_separator;
-        private System.Windows.Forms.Label display;
+        private System.Windows.Forms.Label display_main;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Button btn_mod;
+        private System.Windows.Forms.Label display_operation;
+        private System.Windows.Forms.Label display_firstNumber;
     }
 }
 
