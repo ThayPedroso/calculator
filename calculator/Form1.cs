@@ -13,6 +13,8 @@ namespace calculator
         private void btn_clear_Click(object sender, EventArgs e)
         {
             this.display_main.ResetText();
+            this.display_operation.ResetText();
+            this.display_firstNumber.ResetText();
         }
 
         private void btn_zero_Click(object sender, EventArgs e)
@@ -113,6 +115,40 @@ namespace calculator
                 this.display_firstNumber.Text = this.display_main.Text;
             }
             this.display_main.ResetText();
+        }
+
+        private void btn_equals_Click(object sender, EventArgs e)
+        {
+            double firstNumber, secondNumber;
+            double result = 0;
+
+            double.TryParse(this.display_firstNumber.Text, out firstNumber);
+            double.TryParse(this.display_main.Text, out secondNumber);
+
+            if (this.display_operation.Text == "+")
+            {
+                result = firstNumber + secondNumber;
+            }
+            if (this.display_operation.Text == "-")
+            {
+                result = firstNumber - secondNumber;
+            }
+            if (this.display_operation.Text == "*")
+            {
+                result = firstNumber * secondNumber;
+            }
+            if (this.display_operation.Text == "/")
+            {
+                result = firstNumber / secondNumber;
+            }
+            if (this.display_operation.Text == "%")
+            {
+                result = firstNumber % secondNumber;
+            }
+
+            this.display_main.Text = result.ToString();
+            this.display_operation.ResetText();
+            this.display_firstNumber.ResetText();
         }
     }
 }

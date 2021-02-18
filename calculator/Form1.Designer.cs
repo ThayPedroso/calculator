@@ -204,6 +204,7 @@
             this.btn_equals.TabIndex = 13;
             this.btn_equals.Text = "=";
             this.btn_equals.UseVisualStyleBackColor = true;
+            this.btn_equals.Click += new System.EventHandler(this.btn_equals_Click);
             // 
             // btn_division
             // 
