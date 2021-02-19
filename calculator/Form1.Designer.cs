@@ -226,6 +226,7 @@
             this.btn_separator.TabIndex = 15;
             this.btn_separator.Text = ".";
             this.btn_separator.UseVisualStyleBackColor = true;
+            this.btn_separator.Click += new System.EventHandler(this.btn_separator_Click);
             // 
             // display_main
             // 

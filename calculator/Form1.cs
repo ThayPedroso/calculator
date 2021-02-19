@@ -150,5 +150,10 @@ namespace calculator
             this.display_operation.ResetText();
             this.display_firstNumber.ResetText();
         }
+
+        private void btn_separator_Click(object sender, EventArgs e)
+        {
+            this.display_main.Text = this.display_main.Text + ",";
+        }
     }
 }
